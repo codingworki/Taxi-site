@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi(Бавлы-Казань-Бавлы)</title>
+    <meta name="description" content="Пассажирские перевозки(Бавлы-Казань-Бавлы) на автомобилях Mercedes Benz. Принимаются коллективные заявки от 7 до 15 мест.">
+    <link rel="shortcut icon" type="image/x-icon" href="ico.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <h1 class="logo__text">Taxi</h1>
+                    <a class="logo__description" name="logo">Бавлы-Казань-Бавлы</a>
+                </div>
+                <nav class="mobile-menu">
+                    <input type="checkbox" id="checkbox" class="mobile-menu__checkbox">
+                    <label for="checkbox" class="mobile-menu__btn"><div class="mobile-menu__icon"></div></label>
+                    <div class="header__nav">
+                        <div class="nav">
+                            <a href="#logo" class="nav__link">Главная</a>
+                            <a href="#date" class="nav__link">Стоимость/Заказать</a>
+                            <a href="#" class="nav__link">О нас</a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="header__nav1">
+                    <div class="nav1">
+                        <a href="#logo" class="nav__link1">Главная</a>
+                        <a href="#date" class="nav__link1">Стоимость/Заказать</a>
+                        <a href="#" class="nav__link1">О нас</a>
+                    </div>
+                </div>                           
+            </div>
+            <div class="center">
+                <div class="header__tel">
+                    <div class="tel"><a name="tel" href="tel:8-904-87-400-87" class="tel__link">8-904-87-400-87</a></div>
+                    <div class="tel__description">Такси Бавлы-Казань-Бавлы <br> <span class="yellow">Коллективные заявки  <br>  Ежедневно: <br> Выезд из Бавлов в 02:30ч <br> Выезд из Казани в 14:30ч </span><br> Доставка посылок</div>
+                    <div class="tel__img"><img src="img/сar.png" alt="taxi"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section__order">
+            <div class="container">
+                    <div class="order__wrapper">
+                        <div class="order__calc">
+                           <h3 class="calc__title">Расчитать стоимость <span class="title__yellow"> поездки</span></h3>
+                            <div class="select__id">Откуда:
+                                <select id="wherefrom" class="id__wrapper">
+                                    <option class="id" value="0">Бавлы</option>
+                                    <option class="id" value="1">Казань</option>
+                                </select>
+                            </div>
+                            <div class="select__id">Куда:
+                                <select id="whereto" class="id__wrapper">
+                                    <option class="id" value="0" id="whereto1">Бавлы</option>
+                                    <option class="id" value="1" id="whereto2">Казань</option>
+                                </select>
+                            </div>
+                            <div class="select__id">Довезти в Казань до: 
+                                <select id="address" class="id__wrapper">
+                                    <option class="id" value="600" id="address4"></option>
+                                    <option class="id" value="800" id="address1">Моего адреса</option>
+                                    <option class="id" value="600" id="address2">РКБ(Респ.клин. больница)</option>
+                                    <option class="id" value="600" id="address3">Проспекта Победы</option>
+                                </select>
+                            </div>
+                            <button onclick="calc();" class="form__button">Рассчитать стоимость</button>
+                            <div class="order__price" id="price"></div>
+                        </div>
+                        <div class="order__form">
+                            <h3 class="form__title">Забронировать <span class="title__yellow"> место</span></h3>
+                            <form action="send.php" method="post" class="order__form">
+                                <input type="text" class="form__input" name="name" placeholder="Имя" required><br>
+                                <input type="text" class="form__input" id="date" name="date" placeholder="Дата(дд.мм.гг)" required><br>
+                                <input type="text" class="form__input" name="wherefrom" placeholder="Откуда(город,адрес)" required><br>
+                                <input type="text" class="form__input" name="whereto" placeholder="Куда(город,адрес)" required><br>
+                                <input type="tel" class="form__input" id="tel" name="tel" placeholder="Укажите номер телефона" required><br>
+                                <input type="submit" class="form__button" value="Отправить">
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <section class="section__about">
+            <div class="container">
+                <div class="center">
+                    <h3 class="about__title">О нас</h3>
+                </div>
+                <div class="about__wrapper">
+                    <p class="about__info">Пассажирские перевозки <span class="yellow">Бавлы-Казань-Бавлы</span> на автомобилях Mercedes Benz с просторным салоном
+                        и багажным отделением  <br>
+                        Принимаются коллективные заявки от 7 до 15 мест, возможность наличного и безналичного расчета.
+                    </p>
+                    <div class="about__contact">
+                        <h3 class="contact__title">Наши<span class="yellow"> контакты:</span></h3>
+                        <div class="contact__info">
+                            <a class="contact__link" href="https://api.whatsapp.com/send?phone=79048740087">WhatsApp</a>
+                            <a class="contact__link" href="tel:8-904-87-400-87">8-904-87-400-87</a>
+                            <a class="contact__link" href="https://vk.com/id437890882">VK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <a href="https://vk.com/id222866717" class="copyright">Copyright by Shatanov Timur</a>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $("#tel").mask("+7 (999) 99-99-999");
+        $("#date").mask("99.99.9999", {placeholder: "дд.мм.гггг" });
+      });
+    </script>
+    <script  src="js/main.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+</body>
+</html>
